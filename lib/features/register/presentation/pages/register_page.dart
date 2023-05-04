@@ -1,26 +1,27 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:demo_project/features/login/presentation/widget/login_body.dart';
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
-import '../../../../core/routes/app_router.gr.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+import '../../../../core/routes/app_router.gr.dart';
+import '../widget/register_body.dart';
+
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   var formKey = GlobalKey<FormState>();
   var usernameController = TextEditingController();
   var passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: SafeArea(
-        child: LoginBody(
+        child: RegisterBody(
           usernameController: usernameController,
           passwordController: passwordController,
           formKey: formKey,

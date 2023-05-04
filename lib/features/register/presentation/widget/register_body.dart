@@ -6,14 +6,14 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/constants/strings.dart';
 import '../../../../core/widgets/app_text_field.dart';
 
-class LoginBody extends StatelessWidget {
+class RegisterBody extends StatelessWidget {
   final TextEditingController usernameController;
   final TextEditingController passwordController;
   final GlobalKey formKey;
   final Function() onLoginPressed;
   final Function() onRegisterPressed;
 
-  const LoginBody({
+  const RegisterBody({
     Key? key,
     required this.usernameController,
     required this.passwordController,
@@ -26,7 +26,7 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
-      child: Column(
+      child: ListView(
         children: [
           Text(
             sanoads,
@@ -38,33 +38,56 @@ class LoginBody extends StatelessWidget {
           ),
           32.verticalSpace(),
           AppTextFormField(
-            labelText: '$userName / $email',
+            labelText: firstName,
             controller: usernameController,
             validator: validator,
           ),
           32.verticalSpace(),
           AppTextFormField(
-              labelText: password,
-              obscureText: true,
-              controller: passwordController,
-              validator: validator),
+            labelText: lastName,
+            controller: passwordController,
+            validator: validator,
+          ),
+          32.verticalSpace(),
+          AppTextFormField(
+            labelText: phoneNumber,
+            controller: passwordController,
+            validator: validator,
+          ),
+          32.verticalSpace(),
+          AppTextFormField(
+            labelText: email,
+            controller: passwordController,
+            validator: validator,
+          ),
+          32.verticalSpace(),
+          AppTextFormField(
+            labelText: password,
+            obscureText: true,
+            controller: passwordController,
+            validator: validator,
+          ),
+          32.verticalSpace(),
+          AppTextFormField(
+            labelText: confirmPassword,
+            obscureText: true,
+            controller: passwordController,
+            validator: validator,
+          ),
           32.verticalSpace(),
           AppButton(
-            buttonText: login,
+            buttonText: register,
             onPressed: onLoginPressed,
           ),
           48.verticalSpace(),
-          const Text(forgotYourPassword).bodyMedium(),
-          10.verticalSpace(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(dontHaveAnAccount).bodyMedium(),
+              const Text(alreadyHaveAnAccount).bodyMedium(),
               12.horizontalSpace(),
               InkWell(
-                onTap:onRegisterPressed,
-                child:
-                    const Text(register).bodyMedium(fontColor: textColorGrey),
+                onTap: onRegisterPressed,
+                child: const Text(login).bodyMedium(fontColor: textColorGrey),
               ),
             ],
           )

@@ -7,7 +7,6 @@ import 'core/routes/app_router.gr.dart';
 
 void main() async {
   await configureInjection();
-
   runApp(MyApp());
 }
 
@@ -19,7 +18,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       routeInformationParser: _appRouter.defaultRouteParser(),

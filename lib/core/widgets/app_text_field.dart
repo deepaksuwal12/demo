@@ -16,12 +16,15 @@ class AppTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      obscureText: obscureText,
-      controller: controller,
-      validator: validator,
-      decoration: InputDecoration(
-        labelText: labelText,
+    return SizedBox(
+      height: 50,
+      child: TextFormField(
+        obscureText: obscureText,
+        controller: controller,
+        validator: validator,
+        decoration: InputDecoration(
+          labelText: labelText,
+        ),
       ),
     );
   }

@@ -1,0 +1,13 @@
+const String sanoads = 'Sanoads';
+const String userName = 'Username';
+const String email = 'Email';
+const String password = 'Password';
+const String login = 'Login';
+const String register = 'Register';
+const String forgotYourPassword = 'Forgot Your Password?';
+const String dontHaveAnAccount = 'Don’t have an account?';
+const String firstName = 'First Name';
+const String lastName = 'Last Name';
+const String phoneNumber = 'Phone Number';
+const String confirmPassword = 'Confirm Password';
+const String alreadyHaveAnAccount = 'Already have an account?';

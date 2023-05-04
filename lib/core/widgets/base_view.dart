@@ -6,8 +6,12 @@ class BaseView extends StatelessWidget {
   final Widget body;
   final double padding;
 
-  const BaseView({Key? key, this.title, required this.body, this.padding = 24})
-      : super(key: key);
+  const BaseView({
+    Key? key,
+    this.title,
+    required this.body,
+    this.padding = 20,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
