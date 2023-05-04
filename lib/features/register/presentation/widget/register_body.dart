@@ -3,20 +3,29 @@ import 'package:demo_project/core/util/extension.dart';
 import 'package:demo_project/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:styled_widget/styled_widget.dart';
 import '../../../../core/constants/strings.dart';
 import '../../../../core/widgets/app_text_field.dart';
 
 class RegisterBody extends StatelessWidget {
-  final TextEditingController usernameController;
+  final TextEditingController firstNameController;
+  final TextEditingController lastNameController;
+  final TextEditingController phoneNumberController;
+  final TextEditingController emailController;
   final TextEditingController passwordController;
+  final TextEditingController confirmPasswordController;
   final GlobalKey formKey;
   final Function() onLoginPressed;
   final Function() onRegisterPressed;
 
   const RegisterBody({
     Key? key,
-    required this.usernameController,
+    required this.firstNameController,
+    required this.lastNameController,
+    required this.phoneNumberController,
+    required this.emailController,
     required this.passwordController,
+    required this.confirmPasswordController,
     required this.formKey,
     required this.onLoginPressed,
     required this.onRegisterPressed,
@@ -35,30 +44,34 @@ class RegisterBody extends StatelessWidget {
               fontWeight: FontWeight.w400,
               color: textColorBlack,
             ),
-          ),
+          ).center(),
           32.verticalSpace(),
           AppTextFormField(
             labelText: firstName,
-            controller: usernameController,
+            controller: firstNameController,
             validator: validator,
+            keyboardType: TextInputType.name,
           ),
           32.verticalSpace(),
           AppTextFormField(
             labelText: lastName,
-            controller: passwordController,
+            controller: lastNameController,
             validator: validator,
+            keyboardType: TextInputType.name,
           ),
           32.verticalSpace(),
           AppTextFormField(
             labelText: phoneNumber,
-            controller: passwordController,
+            controller: phoneNumberController,
+            keyboardType: TextInputType.phone,
             validator: validator,
           ),
           32.verticalSpace(),
           AppTextFormField(
             labelText: email,
-            controller: passwordController,
+            controller: emailController,
             validator: validator,
+            keyboardType: TextInputType.emailAddress,
           ),
           32.verticalSpace(),
           AppTextFormField(
@@ -66,18 +79,20 @@ class RegisterBody extends StatelessWidget {
             obscureText: true,
             controller: passwordController,
             validator: validator,
+            keyboardType: TextInputType.visiblePassword,
           ),
           32.verticalSpace(),
           AppTextFormField(
             labelText: confirmPassword,
             obscureText: true,
-            controller: passwordController,
+            controller: confirmPasswordController,
             validator: validator,
+            keyboardType: TextInputType.visiblePassword,
           ),
           32.verticalSpace(),
           AppButton(
             buttonText: register,
-            onPressed: onLoginPressed,
+            onPressed: onRegisterPressed,
           ),
           48.verticalSpace(),
           Row(
@@ -86,7 +101,7 @@ class RegisterBody extends StatelessWidget {
               const Text(alreadyHaveAnAccount).bodyMedium(),
               12.horizontalSpace(),
               InkWell(
-                onTap: onRegisterPressed,
+                onTap: onLoginPressed,
                 child: const Text(login).bodyMedium(fontColor: textColorGrey),
               ),
             ],

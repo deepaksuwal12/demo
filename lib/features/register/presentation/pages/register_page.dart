@@ -14,24 +14,30 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   var formKey = GlobalKey<FormState>();
-  var usernameController = TextEditingController();
+  var firstNameController = TextEditingController();
+  var lastNameController = TextEditingController();
+  var phoneNumberController = TextEditingController();
+  var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  var confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: RegisterBody(
-          usernameController: usernameController,
+          firstNameController: firstNameController,
+          lastNameController: lastNameController,
+          phoneNumberController: phoneNumberController,
+          emailController: emailController,
           passwordController: passwordController,
+          confirmPasswordController: confirmPasswordController,
           formKey: formKey,
           onLoginPressed: () {
-            if (formKey.currentState!.validate()) {
-              context.router.push(const DashboardPageRoute());
-            }
+            context.router.replace(const LoginPageRoute());
           },
-          onRegisterPressed: (){
-            context.router.push(const RegisterPageRoute());
+          onRegisterPressed: () {
+            if (formKey.currentState!.validate()) {}
           },
         ).padding(all: 20),
       ),
