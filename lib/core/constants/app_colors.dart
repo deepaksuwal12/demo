@@ -7,3 +7,4 @@ const Color textColorWhite = Color(0XFFF5F5F7);
 const Color textColorGrey = Color(0XFF8F8F8F);
 const Color buttonColor = Color(0XFF8F8F8F);
 const Color bgColor = Color(0XFFD1D1D1);
+const Color bgColorGrey = Color(0XFFF5F5F7);

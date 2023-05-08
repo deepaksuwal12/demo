@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sanoads/core/util/extension.dart';
+import 'package:sanoads/features/account/presentation/widget/account_bottom_widget.dart';
 import 'package:sanoads/features/account/presentation/widget/settings_widget.dart';
 
 import '../widget/basic_info_widget.dart';
@@ -30,6 +31,8 @@ class _AccountPageState extends State<AccountPage> {
           newPasswordController: newPasswordController,
           confirmNewPasswordController: confirmNewPasswordController,
         ),
+        16.verticalSpace(),
+        const AccountBottomWidget()
       ],
     );
   }

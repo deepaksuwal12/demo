@@ -54,4 +54,26 @@ extension CustomTextStyle on Text {
       ),
     );
   }
+
+  Text headline6() {
+    return Text(
+      data!,
+      style: GoogleFonts.poppins(
+        fontSize: 20,
+        color: textColorBlack,
+        fontWeight: FontWeight.w400,
+      ),
+    );
+  }
+
+  Text headline5() {
+    return Text(
+      data!,
+      style: GoogleFonts.poppins(
+        fontSize: 24,
+        color: textColorBlack,
+        fontWeight: FontWeight.w400,
+      ),
+    );
+  }
 }
