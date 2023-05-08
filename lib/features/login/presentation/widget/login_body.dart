@@ -1,8 +1,9 @@
-import 'package:demo_project/core/constants/app_colors.dart';
-import 'package:demo_project/core/util/extension.dart';
-import 'package:demo_project/core/widgets/app_button.dart';
+import 'package:sanoads/core/constants/app_colors.dart';
+import 'package:sanoads/core/util/extension.dart';
+import 'package:sanoads/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:styled_widget/styled_widget.dart';
 import '../../../../core/constants/strings.dart';
 import '../../../../core/widgets/app_text_field.dart';
 
@@ -26,7 +27,7 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
-      child: Column(
+      child: ListView(
         children: [
           Text(
             sanoads,
@@ -35,7 +36,7 @@ class LoginBody extends StatelessWidget {
               fontWeight: FontWeight.w400,
               color: textColorBlack,
             ),
-          ),
+          ).center(),
           32.verticalSpace(),
           AppTextFormField(
             labelText: '$userName / $email',
@@ -44,17 +45,18 @@ class LoginBody extends StatelessWidget {
           ),
           32.verticalSpace(),
           AppTextFormField(
-              labelText: password,
-              obscureText: true,
-              controller: passwordController,
-              validator: validator),
+            labelText: password,
+            obscureText: true,
+            controller: passwordController,
+            validator: validator,
+          ),
           32.verticalSpace(),
           AppButton(
             buttonText: login,
             onPressed: onLoginPressed,
           ),
           48.verticalSpace(),
-          const Text(forgotYourPassword).bodyMedium(),
+          const Text(forgotYourPassword).bodyMedium().center(),
           10.verticalSpace(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -62,7 +64,7 @@ class LoginBody extends StatelessWidget {
               const Text(dontHaveAnAccount).bodyMedium(),
               12.horizontalSpace(),
               InkWell(
-                onTap:onRegisterPressed,
+                onTap: onRegisterPressed,
                 child:
                     const Text(register).bodyMedium(fontColor: textColorGrey),
               ),

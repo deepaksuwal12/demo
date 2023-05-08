@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:demo_project/config/app_theme.dart';
+import 'package:sanoads/config/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'core/injection/injection.dart';

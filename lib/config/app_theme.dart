@@ -9,6 +9,18 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     primarySwatch: Colors.grey,
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedLabelStyle: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w500,
+        color: textColorGrey,
+      ),
+      unselectedLabelStyle: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w500,
+        color: textColorBlack,
+      ),
+    ),
     inputDecorationTheme: InputDecorationTheme(
       hintStyle: GoogleFonts.poppins(
         color: textColorGrey,

@@ -1,3 +1,4 @@
+import 'package:sanoads/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTextFormField extends StatefulWidget {
@@ -6,6 +7,7 @@ class AppTextFormField extends StatefulWidget {
   final TextEditingController controller;
   final FormFieldValidator<String>? validator;
   final TextInputType? keyboardType;
+  final EdgeInsetsGeometry contentPadding;
 
   const AppTextFormField({
     Key? key,
@@ -14,6 +16,10 @@ class AppTextFormField extends StatefulWidget {
     required this.controller,
     required this.validator,
     this.keyboardType,
+    this.contentPadding = const EdgeInsets.symmetric(
+      vertical: 16,
+      horizontal: 12,
+    ),
   }) : super(key: key);
 
   @override
@@ -40,16 +46,13 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
         decoration: InputDecoration(
           labelText: widget.labelText,
           isDense: true,
-          contentPadding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 12,
-          ),
+          contentPadding: widget.contentPadding,
           suffixIcon: Visibility(
-            visible:widget.obscureText,
+            visible: widget.obscureText,
             child: IconButton(
               icon: Icon(
                 _passwordVisible ? Icons.visibility : Icons.visibility_off,
-                color: Theme.of(context).primaryColorDark,
+                color: textColorGrey,
               ),
               onPressed: () {
                 setState(() {

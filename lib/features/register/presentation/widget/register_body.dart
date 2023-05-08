@@ -1,6 +1,6 @@
-import 'package:demo_project/core/constants/app_colors.dart';
-import 'package:demo_project/core/util/extension.dart';
-import 'package:demo_project/core/widgets/app_button.dart';
+import 'package:sanoads/core/constants/app_colors.dart';
+import 'package:sanoads/core/util/extension.dart';
+import 'package:sanoads/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_widget/styled_widget.dart';
